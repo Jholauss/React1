@@ -1,9 +1,12 @@
 import React from "react";
-import Header from "./Components/Header/Header"
+import ItemListContainer from "./Components/Header/ItemListContainer/itemList";
+import Header from "./Components/Header/Header";
 const App=()=>{
   return(
-    <Header>
-    </Header>
+    <div className="App">
+      <Header/>
+      <ItemListContainer greeting={"Welcome to luminotec"}/>
+    </div>
   )
 }
 export default App

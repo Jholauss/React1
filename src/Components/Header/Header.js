@@ -1,48 +1,70 @@
 import React from "react";
 import logo from "../../assets/LogoLumi.jpg";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import "./Header.css";
+import CartWidget from "./Cart/Widget/cart";
 
-const Header =()=>{
-    return (
-        <header style={styles.container}>
-        <img style={styles.imagen} src={logo} alt="" />
-        <nav style={styles.navBar}>
-            <a style={styles.anchors} href="">Inicio</a>
-            <a style={styles.anchors} href="">Productos</a>
-            <a style={styles.anchors} href="">Info</a>
-        </nav>
-        <ShoppingCartIcon style={styles.icono} />
-        </header>
-    )
-}
+const menuItems = [
+    {
+        id:1,
+        name: "Home",
+    },
+    {
+        id:2,
+        name: "Products",
+    },
+    {
+        id:3,
+        name: "Info",
+    }
+];
 
-const styles ={
+const Header = () => {
+    return(
+        <div className="nav" style={styles.container}>
+        <a href="/">
+        <img style={styles.logo} src={logo} alt="" /></a>
+        <div>
+        {menuItems.map((item) => (
+            <a href="/" style={styles.anchors} className="nav-items" key={item.id}>
+            {item.name}
+            </a>  
+        ))}
+        <img src="" alt="" />
+        </div>
+        <CartWidget/>
+        </div>
+        
+    );
+};
+const styles={
     container:{
-        backgroundColor:"#0a0a0a",
-        minheight: "100vh",
-        maxwidth:"100%",
-        display:"flex",
-        flexDirection:"columms",
-        justifyContent:"space-between",
-        alignItems:"center",
-    },
-    navBar:{
-        marginLeft:"10rem",
-    },
-    imagen:{
-        marginLeft:"2rem",
-        width:"15%",
+        display: "flex",
+        justifyContent: "space-between",
+        backgroundColor: "#000000",
+        width: "100%",
+        position: "fixed",
+        top: 0,
+        left: 0,    
+        zIndex: "1",
+        boxSizing: "border-box",
+        fontFamily: "Roboto, sans-serif",
+        fontSize: "20px",
+        letterSpacing: "1px",
+        alignItems: "center",
+
     },
     anchors:{
-        color:"#F1C40F",
-        textDecoration:"none",
-        padding:8,
+        textDecoration: "none",
+        color: "#f5f5f5",
+        fontSize: "1rem",
+        fontWeight: "bold",
+        padding: "0.5rem",
+        margin: "0.5rem",
     },
-    icono:{
-        color:"#F1C40F",
-        width:"10rem",
+    logo:{
+        width: "50%",
+        margin: "0.5rem",
     }
 }
+
 
 export default Header
