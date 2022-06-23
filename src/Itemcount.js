@@ -2,9 +2,9 @@ import React from "react";
 import image from "./assets/Hoodie-1.jpg";
 import{useCard} from "./Hooks/useCard";
 
-export const Itemcount = ({stock,name}) => {
+export const Itemcount = ({stock,name,initial}) => {
 
-    const {count,amount} =useCard(stock);
+    const {count,handleIncrement,handleDecrement} =useCard(initial,stock);
 
     return (
         <div style={styles.landing}>
@@ -12,9 +12,11 @@ export const Itemcount = ({stock,name}) => {
             <img style={styles.image} src={image} alt="Hoodie"/>
             <h4>Precio:S/<span>100</span></h4>
             <div>
-            <button style={styles.button} onClick={()=>count(+1)}>+</button>
-            <span>{amount}|{stock}</span>
-            <button style={styles.button} onClick={()=>count(-1)}>-</button>
+            <button style={styles.button} onClick={handleIncrement}>+</button>
+            <span>
+            {count}|{stock}
+            </span>
+            <button style={styles.button} onClick={handleDecrement}>-</button>
             </div>
         </div>
     );

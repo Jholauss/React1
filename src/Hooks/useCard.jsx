@@ -1,15 +1,20 @@
-import {useState} from "react";
+import { useState } from "react";
 
-export const useCard=(stock)=>{
-    const [amount, setAmount] = useState(0);
-    const count=(value)=>{
-    const result = amount + value;
-        if(result<=stock){
-            setAmount(amount+value);
-        }
+function useCard(initial, stock) {
+  const [count, setCount] = useState(initial);
 
+  const handleIncrement = () => {
+    if (count < stock) {
+      setCount((prev) => prev + 1);
     }
-    return{
-        count,amount
+  };
+
+  const handleDecrement = () => {
+    if (count > 0) {
+      setCount((prev) => prev - 1);
     }
+  };
+
+  return { count, handleIncrement, handleDecrement };
 }
+export{useCard};
