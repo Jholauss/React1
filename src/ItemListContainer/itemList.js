@@ -11,8 +11,11 @@ const styles={
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
-        width:"100%",
-        height:"calc(100vh - 60px)",
-    }
+        textAlign:"center",
+        maxWidth:"100%",
+        height:"15rem",
+        backgroundColor:"#282c34",
+        color:"#fff",
+    },
 }
 export default ItemListContainer;

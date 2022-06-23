@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/LogoLumi.jpg";
+import logo from "../../assets/Logo_Invertido.png";
 import CartWidget from "./Cart/Widget/cart";
 
 const menuItems = [
@@ -61,7 +61,7 @@ const styles={
         margin: "0.5rem",
     },
     logo:{
-        width: "50%",
+        width: "15%",
         margin: "0.5rem",
     }
 }
