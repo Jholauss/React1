@@ -2,19 +2,20 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from './Components/Header/Header';
+import {BrowserRouter} from 'react-router-dom';
 import ItemListContainer from './Components/ItemListContainer/itemListContainer';
-// import ItemCount from './Components/itemCount/Itemcount';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+
 
 function App() {
   const greeting= "Welcome to goods";
-  // const onAdd = (quantity) => {
-  //   console.log(`Compraste ${quantity} unidades`);
-  // };
   return (
-    <div className="App">
+    <BrowserRouter>
         <Header/>
         <ItemListContainer greeting={greeting}/>
-    </div>
+        <ItemDetailContainer/>
+    </BrowserRouter>
+ 
   );
 }
 

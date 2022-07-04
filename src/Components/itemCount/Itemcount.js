@@ -30,7 +30,8 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     marginTop: "1rem",
-    letterSpacing: "3px"
+    letterSpacing: "3px",
+    margin:"0 auto",
   },
   button: {
     backgroundColor: "#2c3e50",
