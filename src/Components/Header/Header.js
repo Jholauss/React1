@@ -6,6 +6,7 @@ import CartWidget from "./Cart/Widget/cart";
 
 
 const Header = () => {
+
     return(
         <nav className="navbar navbar-expand-lg bg-black">
         <div className="container-fluid">
@@ -27,8 +28,8 @@ const Header = () => {
               <div className="contenedor">
                 <Link to={'/Productos'} className="text-light dropdown-toggle text-decoration-none">Categorias</Link>
                 <ul>
-                  <li><Link style={styles.links} to={'/Categoria/'}>NIKE</Link></li>
-                  <li><Link style={styles.links} to={'/Categoria/'}>ADIDAS</Link></li>
+                  <li><Link style={styles.links} to={'/Categoria/nike'}>NIKE</Link></li>
+                  <li><Link style={styles.links} to={'/Categoria/adidas'}>ADIDAS</Link></li>
                   <li><Link style={styles.links} to={'/Productos'}>TODOS</Link></li>
                 </ul>
               </div>

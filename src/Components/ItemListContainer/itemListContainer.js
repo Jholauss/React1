@@ -14,7 +14,7 @@ const ItemListContainer = ({greeting}) => {
         if(!tipocategoria){
           setProductList(res)
       }else{
-        setProductList(res.filter((prod)=>prod.categoria===tipocategoria))
+        setProductList(res.filter((prod)=>prod.category===tipocategoria))
       }
       })
       .catch((error)=>console.log(error))
