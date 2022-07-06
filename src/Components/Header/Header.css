@@ -1,0 +1,29 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.contenedor{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contenedor ul{
+    position: absolute;
+    top: 3rem;
+    left: .5rem;
+    max-height:0px;
+    overflow: hidden;
+    color: white; 
+    transition: all 1.4s;
+    z-index: 1;
+}
+.contenedor:hover ul{
+    max-height: 400px;
+}
+link{
+    text-decoration: none;
+    color: white;
+}

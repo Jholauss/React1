@@ -2,9 +2,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from './Components/Header/Header';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ItemListContainer from './Components/ItemListContainer/itemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import Home from './Pages/Home';
+import AboutUs from './Pages/AboutUs';
 
 
 function App() {
@@ -12,8 +14,13 @@ function App() {
   return (
     <BrowserRouter>
         <Header/>
-        <ItemListContainer greeting={greeting}/>
-        <ItemDetailContainer/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path='/Productos' element={<ItemListContainer greeting={greeting}/>}/>
+          <Route path='/Categoria/:tipocategoria' element={<ItemListContainer greeting={greeting}/>}/>
+          <Route path='/About' element={<AboutUs/>}/>
+          <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
+          </Routes>
     </BrowserRouter>
  
   );
