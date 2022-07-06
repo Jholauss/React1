@@ -27,8 +27,8 @@ const Header = () => {
               <div className="contenedor">
                 <Link to={'/Productos'} className="text-light dropdown-toggle text-decoration-none">Categorias</Link>
                 <ul>
-                  <li><Link style={styles.links} to={'/'}>NIKE</Link></li>
-                  <li><Link style={styles.links} to={'/'}>ADIDAS</Link></li>
+                  <li><Link style={styles.links} to={'/Categoria/'}>NIKE</Link></li>
+                  <li><Link style={styles.links} to={'/Categoria/'}>ADIDAS</Link></li>
                   <li><Link style={styles.links} to={'/Productos'}>TODOS</Link></li>
                 </ul>
               </div>
