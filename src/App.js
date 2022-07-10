@@ -7,10 +7,10 @@ import ItemListContainer from './Components/ItemListContainer/itemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
-
+import Carrito from './Pages/Carrito';
+export const greeting= "Welcome to goods";
 
 function App() {
-  const greeting= "Welcome to goods";
   return (
     <BrowserRouter>
         <Header/>
@@ -20,6 +20,7 @@ function App() {
           <Route path='/Categoria/:tipocategoria' element={<ItemListContainer greeting={greeting}/>}/>
           <Route path='/About' element={<AboutUs/>}/>
           <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/Carrito' element={<Carrito/>}/>
           </Routes>
     </BrowserRouter>
  

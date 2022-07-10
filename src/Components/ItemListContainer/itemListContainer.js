@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList'
 import { data } from '../../mocks/DataBase'
 import { useParams } from 'react-router-dom'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { Circles } from  'react-loader-spinner'
+import { Puff } from  'react-loader-spinner'
 
 const ItemListContainer = ({greeting}) => {
   const [productList, setProductList]=useState([])
@@ -25,7 +25,7 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
       <p className='bg-dark text-white' style={styles.title}>{greeting}</p>
-      {loading ? <Circles height="100" width="8000" color="red" ariaLabel='loading'/> : <ItemList productList={productList}/> }
+      {loading ? <Puff height="100" width="8000" color="blue" ariaLabel='loading'/> : <ItemList productList={productList}/> }
     </div>
   )
 }

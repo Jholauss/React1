@@ -1,13 +1,14 @@
 import React from "react";
-
 import shopping_cart from "../../Cart/Widget/shopping-cart-1.png";
 
 
 const CartWidget = () => {
+    
     return (
         <button style={styles.button}>
             <img style={styles.image} src={shopping_cart} alt="cart icon" />
         </button>
+    
     );
 };
 const styles = {

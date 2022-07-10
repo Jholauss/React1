@@ -34,7 +34,7 @@ const Header = () => {
                 </ul>
               </div>
             </ul>
-            <CartWidget/>
+            <Link to={'/Carrito'}><CartWidget/></Link>
           </div>
         </div>
       </nav>

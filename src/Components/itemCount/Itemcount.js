@@ -1,22 +1,22 @@
-import React, { useState,useEffect } from "react";
-export const Itemcount = ({initial,stock,onAdd}) => {
-    const [count, setCount] = useState(parseInt(initial));
+import React from "react";
+export const Itemcount = ({stock,onAdd,count,setCount}) => {
     const decrease =()=>{
-        setCount(count-1);
+        if(count>1){
+            setCount(count-1);
+        }
     }
     const increase =()=>{
+      if(count<stock){
         setCount(count+1);
+      }
     }
-    useEffect(()=>{
-        setCount(parseInt(initial));
-    },[initial])
     return (
         <div style={styles.contador}>
-            <button style={styles.button} disabled={count<=1} onClick={decrease}>-</button>
-            <span>{count}</span>
-            <button style={styles.button} disabled={count>=stock} onClick={increase}>+</button>
+            <button className="btn btn-danger w-20" onClick={decrease}>-</button>
+            <span className="mx-2">{count}</span>
+            <button className="btn btn-primary w-20" onClick={increase}>+</button>
             <div>
-                <button style={styles.buttonAgregar} disabled={stock<=0} onClick={()=>onAdd(count)}>Agregar al carro</button>
+                <button className="btn btn-success fw-bold" style={styles.buttonAgregar} disabled={stock<=0} onClick={onAdd}>Agregar al carro</button>
             </div>
         </div>
     );
@@ -33,20 +33,7 @@ const styles = {
     letterSpacing: "3px",
     margin:"0 auto",
   },
-  button: {
-    backgroundColor: "#2c3e50",
-    border: "1px solid #fff ",
-    color: "#fff",
-    textAlign: "center",
-    padding: "0.5rem",
-    margin: "0.5rem",
-    width: "4rem",
-    borderRadius: "5px",
-    cursor: "pointer"
-  },
   buttonAgregar:{
-    backgroundColor: "#2c3e50",
-    border: "1px solid #fff ",
     color: "#fff",
     textAlign: "center",
     padding: "0.5rem",
