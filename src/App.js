@@ -8,11 +8,14 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
 import Carrito from './Pages/Carrito';
+import CartCustomProvider from './Components/Context/CartContext';
+
 export const greeting= "Welcome to goods";
 
 function App() {
   return (
     <BrowserRouter>
+    <CartCustomProvider>
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -22,6 +25,7 @@ function App() {
           <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
           <Route path='/Carrito' element={<Carrito/>}/>
           </Routes>
+    </CartCustomProvider>
     </BrowserRouter>
  
   );
