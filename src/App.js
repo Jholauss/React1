@@ -9,6 +9,7 @@ import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
 import Carrito from './Pages/Carrito';
 import CartCustomProvider from './Components/Context/CartContext';
+import Error404 from './Pages/Error404';
 
 export const greeting= "Welcome to goods";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/About' element={<AboutUs/>}/>
           <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
           <Route path='/Carrito' element={<Carrito/>}/>
+          <Route path='*' element={<Error404/>}/>
           </Routes>
     </CartCustomProvider>
     </BrowserRouter>
