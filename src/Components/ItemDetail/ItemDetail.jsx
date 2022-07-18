@@ -5,13 +5,12 @@ import{CartContext} from '../Context/CartContext'
 const ItemDetail = ({producto}) => {
   const [count, setCount] = useState(1);
   const [compra, setCompra] = useState(false);
-  const { addProducts } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const navegate = useNavigate();
     const onAdd = (count) => {
-        console.log(`Agregando ${count} ${producto.name}`);
         setCompra(true);
         const product = { ...producto, qty: count };
-        addProducts(product);
+        addToCart(product);
     }
   return (
     <div style={styles.container}>
@@ -20,6 +19,7 @@ const ItemDetail = ({producto}) => {
                 <p>{producto.name}</p>
                 <p>{producto.description}</p>
                 <p>Stock disponible: {producto.stock}</p>
+                <p>Precio: {producto.price}</p>
                 {compra ? <div>
                 <button className='btn btn-info mx-2' onClick={()=>navegate(`/productos`)}>Seguir Comprando</button> 
                 <button className='btn btn-success' onClick={()=>navegate(`/Carrito`)}>Ir al carrito</button>

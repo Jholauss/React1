@@ -1,5 +1,16 @@
 import React from "react";
+import swal from 'sweetalert';
 export const Itemcount = ({stock,onAdd,count,setCount}) => {
+  const alerta = () => {
+    swal({
+      position: 'top-end',
+      icon: 'success',
+      width: '10px',
+      title: 'Producto agregado al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  } 
     const decrease =()=>{
         if(count>1){
             setCount(count-1);
@@ -16,7 +27,8 @@ export const Itemcount = ({stock,onAdd,count,setCount}) => {
             <span className="mx-2">{count}</span>
             <button className="btn btn-primary w-20" onClick={increase}>+</button>
             <div>
-                <button className="btn btn-success fw-bold" style={styles.buttonAgregar} disabled={stock<=0} onClick={onAdd}>Agregar al carro</button>
+                <button className="btn btn-success fw-bold" style={styles.buttonAgregar} disabled={stock<=0} 
+                onClick={()=>{onAdd(count);alerta()}}>Agregar al carro</button>
             </div>
         </div>
     );

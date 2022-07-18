@@ -8,15 +8,15 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
 import Carrito from './Pages/Carrito';
-import CartCustomProvider from './Components/Context/CartContext';
 import Error404 from './Pages/Error404';
+import CartProvider from './Components/Context/CartContext';
 
 export const greeting= "Welcome to goods";
 
 function App() {
   return (
     <BrowserRouter>
-    <CartCustomProvider>
+    <CartProvider>
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -27,7 +27,7 @@ function App() {
           <Route path='/Carrito' element={<Carrito/>}/>
           <Route path='*' element={<Error404/>}/>
           </Routes>
-    </CartCustomProvider>
+    </CartProvider>
     </BrowserRouter>
  
   );
