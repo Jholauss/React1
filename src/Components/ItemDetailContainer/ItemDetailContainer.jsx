@@ -1,16 +1,23 @@
 import React ,{useState} from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { data } from '../../mocks/DataBase'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { db } from '../../firebase/firebase'
+import {doc , collection,getDoc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [producto,setProducto] = useState({})
     const [loading,setLoading] = useState(true)
     const { id }= useParams()
     useEffect(() => {
-        data
-        .then((res)=>setProducto(res.find((item) => item.id===id)))
+        const productosCollection = collection(db,'productos')
+        const refDoc = doc(productosCollection,id)
+        getDoc(refDoc).then((res)=>{
+            setProducto({
+                id: res.id,
+                ...res.data()
+            })
+        })
         .catch((err)=>console.log(err))
         .finally(()=>setLoading(false))   
     },[id])

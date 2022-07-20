@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
-import { data } from '../../mocks/DataBase'
 import { useParams } from 'react-router-dom'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Puff } from  'react-loader-spinner'
+import { db } from '../../firebase/firebase';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 const ItemListContainer = ({greeting}) => {
-  const [productList, setProductList]=useState([])
-  const [loading, setLoading]=useState(true)
-  const {tipocategoria}=useParams()
+  const [productList, setProductList]=useState([]);
+  const [loading, setLoading]=useState(true);
+  const {tipocategoria}=useParams();
     useEffect(()=>{
       setLoading(true)
-      data
-      .then((res)=>{
-        if(!tipocategoria){
-          setProductList(res)
-      }else{
-        setProductList(res.filter((prod)=>prod.category===tipocategoria))
-      }
-      })
+      const qr = tipocategoria?query(collection(db,"productos"),where("category","==",tipocategoria))
+        :collection(db,"productos")
+
+        getDocs(qr)
+        .then(result=>{
+            const lista=result.docs.map(doc=>{
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
+            })
+            setProductList(lista)
+        })
       .catch((error)=>console.log(error))
       .finally(()=>setLoading(false))
     },[tipocategoria])

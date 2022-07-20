@@ -3,7 +3,7 @@ import { CartContext } from '../Components/Context/CartContext';
 const Carrito = () => {
   const {cart,deleteProduct,clearCart,calcularTotal}= useContext(CartContext);
   if(cart.length===0){
-        return <p className='text-center fs-2 text-danger bg-dark'>CARRO VACIO</p>
+        return <p className='text-center fs-2 text-danger '>CARRO VACIO</p>
     }
   return (
     <div>
