@@ -21,7 +21,6 @@ const ItemDetailContainer = () => {
         .catch((err)=>console.log(err))
         .finally(()=>setLoading(false))   
     },[id])
-    console.log('producto',producto);
     return (
         <div>
             {loading ? <p>Cargando...</p>:<ItemDetail producto={producto}/> }

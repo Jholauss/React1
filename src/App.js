@@ -10,7 +10,6 @@ import AboutUs from './Pages/AboutUs';
 import Carrito from './Pages/Carrito';
 import Error404 from './Pages/Error404';
 import CartProvider from './Components/Context/CartContext';
-
 export const greeting= "Welcome to goods";
 
 function App() {
@@ -27,8 +26,10 @@ function App() {
           <Route path='/Carrito' element={<Carrito/>}/>
           <Route path='*' element={<Error404/>}/>
           </Routes>
+        
     </CartProvider>
     </BrowserRouter>
+    
  
   );
 }
