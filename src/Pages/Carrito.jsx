@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../Components/Context/CartContext';
 import { db } from '../firebase/firebase';
 import { collection , addDoc , serverTimestamp } from 'firebase/firestore';
+import swal from 'sweetalert';
 const Carrito = () => {
   const {cart,deleteProduct,clearCart,calcularTotal}= useContext(CartContext);
   const datosComprador={
@@ -20,6 +21,19 @@ const Carrito = () => {
       total : calcularTotal()
     })
   }
+
+  const alerta = () => {
+    swal ({
+      title: 'Compra realizada',
+      icon: 'success',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }  
+  })
+}
 
   if(cart.length===0){
         return <p className='text-center fs-2 text-danger '>CARRO VACIO</p>
@@ -47,7 +61,7 @@ const Carrito = () => {
           <div className='container text-center pt-2'>
           <h5>Total a pagar: ${calcularTotal()}</h5>
           <button className='btn btn-danger ms-1' onClick={()=>clearCart()}>Cancelar compra</button>
-          <button className='btn btn-success ms-1' onClick={()=>{finalizarCompra();clearCart()}} >Finalizar Compra</button>
+          <button className='btn btn-success ms-1' onClick={()=>{finalizarCompra();alerta();clearCart()}} >Finalizar Compra</button>
           </div>
       </div>
     </div>
