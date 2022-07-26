@@ -13,14 +13,19 @@ const ItemDetail = ({producto}) => {
         addToCart(product);
     }
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="container" >
         <h3 className='text-start'>Detalle de producto:</h3>
-                <img style={styles.img} src={producto.img} alt={producto.name}/>
-                <p>{producto.name}</p>
-                <p>{producto.description}</p>
-                <p>Stock disponible: {producto.stock}</p>
-                <p>Precio: {producto.price}</p>
-                {compra ? <div>
+        <div className='d-flex align-items-center row col-12'>
+        <div className='col-6 text-center'>
+        <img  src={producto.img} alt={producto.name} width='50%'/>
+        </div>
+        <div className='col-6 '>
+        <h4 className='text-end'>{producto.name}</h4>
+        <p>{producto.description}</p>
+        <p className='text-end'>Precio: ${producto.price}</p>
+        <div style={styles.description}>
+        <p>Cantidad: {producto.qty}</p>
+                {compra ? <div >
                 <button className='btn btn-info mx-2' onClick={()=>navegate(`/productos`)}>Seguir Comprando</button> 
                 <button className='btn btn-success' onClick={()=>navegate(`/Carrito`)}>Ir al carrito</button>
                 </div> :
@@ -28,8 +33,9 @@ const ItemDetail = ({producto}) => {
                 <Itemcount stock={producto.stock} onAdd={onAdd} count={count} setCount={setCount}/>
                 <button className='btn btn-danger mx-2' onClick={()=>navegate(`/productos`)}>Volver a Productos</button>
                 </div> }
-                
-                
+                </div>
+        </div>
+        </div>
     </div>
   )
 }
@@ -38,12 +44,17 @@ export default ItemDetail
 
 const styles = {
     container: {
-        maxWidth: '100%',
         backgroundColor: '#2c3e50',
         color: '#fff',
-        textAlign: 'center',},
-    img:{
-        width: '20%',
+        padding: '2rem',
+        margin: '2rem auto',
+        borderRadius: '1rem',
+        boxShadow: '0 0.5rem 1rem rgba(0,0,0,.15)',
+        
+    },
+    description:{
+      textAlign: 'center'
     }
+
 
 }

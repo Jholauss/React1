@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { Puff } from  'react-loader-spinner'
+import { BallTriangle } from  'react-loader-spinner'
 import { db } from '../../firebase/firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
-
 const ItemListContainer = ({greeting}) => {
   const [productList, setProductList]=useState([]);
   const [loading, setLoading]=useState(true);
@@ -31,7 +30,7 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
       <p className='bg-dark text-white' style={styles.title}>{greeting}</p>
-      {loading ? <Puff height="100" width="8000" color="blue" ariaLabel='loading'/> : <ItemList productList={productList}/> }
+      {loading ? <BallTriangle height="100" width="8000"  color="red" align="center" ariaLabel='loading'/> : <ItemList productList={productList}/> }
     </div>
   )
 }
@@ -45,4 +44,7 @@ const styles = {
     marginBottom: '1rem',
     textAlign: 'center',
   },
+  Puff:{
+    marginTop: '1rem',
+  }
 }

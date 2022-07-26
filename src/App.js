@@ -10,8 +10,9 @@ import AboutUs from './Pages/AboutUs';
 import Carrito from './Pages/Carrito';
 import Error404 from './Pages/Error404';
 import CartProvider from './Components/Context/CartContext';
-export const greeting= "Welcome to goods";
+import CheckOut from './Pages/CheckOut';
 
+export const greeting= "Welcome to goods";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
           <Route path='/About' element={<AboutUs/>}/>
           <Route path='/Detail/:id' element={<ItemDetailContainer/>}/>
           <Route path='/Carrito' element={<Carrito/>}/>
+          <Route path='/checkout' element={<CheckOut/>}/>
           <Route path='*' element={<Error404/>}/>
           </Routes>
         

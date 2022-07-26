@@ -26,21 +26,26 @@ const Home = () => {
   </div>
   <div>
   <p className='text-center fs-3 text-uppercase pt-2 bg-white border-bottom border-danger'>Destacados</p>
-    <div className='container'>
+    <div className='container d-flex justify-content-center '>
       <div className='row '>
-        <div className='col-md-4'>
-          <div className=''>
+        <div className='col-3'>
+          <div style={styles.img}>
             <img src={imagenes.gif1} className='card-img-top' alt='producto1'></img>
           </div>
           </div>
-          <div className='col-md-4'>
-          <div className=''>
+          <div className='col-3'>
+          <div style={styles.img}>
             <img src={imagenes.gif2} className='card-img-top' alt='producto1'></img>
           </div>
           </div>
-          <div className='col-md-4'>
-          <div className=''>
+          <div className='col-3'>
+          <div style={styles.img}>
             <img src={imagenes.gif3} className='card-img-top' alt='producto1'></img>
+          </div>
+          </div>
+          <div className='col-3'>
+          <div style={styles.img}>
+            <img src={imagenes.gif5} className='card-img-top' alt='producto1'></img>
           </div>
           </div>
           </div>
@@ -52,3 +57,9 @@ const Home = () => {
 }
 
 export default Home
+
+const styles = { 
+  img : {
+    width: '100%',
+  }
+}
