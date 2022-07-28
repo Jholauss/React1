@@ -4,7 +4,6 @@ import { CartContext } from '../Components/Context/CartContext'
 import { db } from '../firebase/firebase';
 import { collection , addDoc , serverTimestamp } from 'firebase/firestore';
 import swal from 'sweetalert';
-import imagenes from '../assets/imagenes'
 const alerta = () => {
     swal ({
       title: 'Compra realizada',
@@ -86,7 +85,7 @@ const CheckOut = () => {
         </form>
 
         <div className='row col-4 '>
-         <img className='w-100 d-flex justify-content-center align-items-center' src={imagenes.gif4} style={{width:"100%"}} alt="gif" />
+         <img className='w-100 d-flex justify-content-center align-items-center' src="https://i.postimg.cc/NFQ4JNmC/gif4.gif" style={{width:"100%"}} alt="gif" />
         </div>
 
         </div>

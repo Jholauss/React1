@@ -1,18 +1,17 @@
 import React from 'react'
-import imagenes from '../assets/imagenes'
 const Home = () => {
   return (
   <div>
     <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="1000">
-      <img src={imagenes.slider1} class="d-block w-100" alt="slider1"></img>
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="https://i.postimg.cc/QMcR9ybH/slider1.jpg" class="d-block w-100" alt="slider1"></img>
     </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src={imagenes.slider2} class="d-block w-100" alt="slider2"></img>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.postimg.cc/L81WwbGN/slider2.jpg" class="d-block w-100" alt="slider2"></img>
     </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src={imagenes.slider3} class="d-block w-100" alt="slider3"></img>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.postimg.cc/FKX64x4m/slider3.jpg" class="d-block w-100" alt="slider3"></img>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -30,22 +29,22 @@ const Home = () => {
       <div className='row '>
         <div className='col-3'>
           <div style={styles.img}>
-            <img src={imagenes.gif1} className='card-img-top' alt='producto1'></img>
+            <img src="https://i.postimg.cc/1zMrj0Rv/1.gif" className='card-img-top' alt='producto1'></img>
           </div>
           </div>
           <div className='col-3'>
           <div style={styles.img}>
-            <img src={imagenes.gif2} className='card-img-top' alt='producto1'></img>
+            <img src="https://i.postimg.cc/C11sTZzS/2.gif" className='card-img-top' alt='producto1'></img>
           </div>
           </div>
           <div className='col-3'>
           <div style={styles.img}>
-            <img src={imagenes.gif3} className='card-img-top' alt='producto1'></img>
+            <img src="https://i.postimg.cc/3RcCKKvp/3.gif" className='card-img-top' alt='producto1'></img>
           </div>
           </div>
           <div className='col-3'>
           <div style={styles.img}>
-            <img src={imagenes.gif5} className='card-img-top' alt='producto1'></img>
+            <img src="https://i.postimg.cc/bYBBmPdK/4.gif" className='card-img-top' alt='producto1'></img>
           </div>
           </div>
           </div>

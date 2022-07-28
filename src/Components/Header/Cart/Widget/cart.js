@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import shopping_cart from "../../Cart/Widget/shopping-cart-1.png";
 import { CartContext } from "../../../Context/CartContext";
 const CartWidget = () => {
     const {qtyProducts} = useContext(CartContext);
     return (
         <>
         <button style={styles.button}>
-            <img style={styles.image} src={shopping_cart} alt="cart icon" />
+            <img style={styles.image} src="https://i.postimg.cc/kg5n3q7q/shopping-cart-1.png" alt="cart icon" />
         </button>
         <span style={styles.span}>{qtyProducts}</span>
         </>
