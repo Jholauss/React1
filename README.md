@@ -4,7 +4,7 @@
 
 En este proyecto se ha desarrollado un eCommerce de zapatillas con capacidad de filtrado dependiendo de la categoria,donde, se puede observar el detalle de cada producto, como su stock , su precio y su respectiva descripcion.
 
-- Deploy :
+- Deploy : https://react1-jholauss.vercel.app/
 
 ## Tareas realizadas:
 
