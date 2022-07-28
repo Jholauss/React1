@@ -1,3 +1,5 @@
+[![Logo-Invertido.png](https://i.postimg.cc/FzHX3VW3/Logo-Invertido.png)](https://postimg.cc/xJhZSMS1)
+
 # Tienda de venta de zapatillas realizada con React.js
 
 En este proyecto se ha desarrollado un eCommerce de zapatillas con capacidad de filtrado dependiendo de la categoria,donde, se puede observar el detalle de cada producto, como su stock , su precio y su respectiva descripcion.
