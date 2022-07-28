@@ -12,7 +12,9 @@ En este proyecto se ha desarrollado un eCommerce de zapatillas con capacidad de 
 - Se desarrolló una tabla de resumen de compra.
 - Funcion de impresion de comprobante de compra en vista Checkout
 - El proyecto fue desarrollado utilizando ReactRouter para realizar las rutas.
+- Implementacion de la pagina "404"
 
+[![Adidas.gif](https://i.postimg.cc/9Q8bQtTs/Adidas.gif)](https://postimg.cc/Xr5d25sg)
 ## Para ejecutar servidor de desarrollo de React e iniciar proyecto:
 
 Este proyecto se inició con Create React App.
