@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { db } from '../../firebase/firebase'
 import {doc , collection,getDoc} from 'firebase/firestore'
+import { BallTriangle } from 'react-loader-spinner'
 
 const ItemDetailContainer = () => {
     const [producto,setProducto] = useState({})
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
     },[id])
     return (
         <div>
-            {loading ? <p>Cargando...</p>:<ItemDetail producto={producto}/> }
+            {loading ? <BallTriangle height="100" width="8000"  color="red" align="center" ariaLabel='loading'/> :<ItemDetail producto={producto}/> }
 
         </div>
     )

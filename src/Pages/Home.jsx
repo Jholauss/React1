@@ -3,15 +3,15 @@ import imagenes from '../assets/imagenes'
 const Home = () => {
   return (
   <div>
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
+    <div class="carousel-item active" data-bs-interval="1000">
       <img src={imagenes.slider1} class="d-block w-100" alt="slider1"></img>
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src={imagenes.slider2} class="d-block w-100" alt="slider2"></img>
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src={imagenes.slider3} class="d-block w-100" alt="slider3"></img>
     </div>
   </div>

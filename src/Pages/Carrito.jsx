@@ -1,13 +1,19 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../Components/Context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import imagenes  from '../assets/imagenes';
+
 const Carrito = () => {
   const {cart,deleteProduct,clearCart,calcularTotal}= useContext(CartContext);
   const navegate = useNavigate();
   
 
   if(cart.length===0){
-        return <p className='text-center fs-2 text-danger '>CARRO VACIO</p>
+        return <div className='d-flex justify-content-center row container-fluid align-items-center pt-5'>
+        <img style={styles.img} src={imagenes.cartVacio} alt="cart-vacio"/>
+        <p className='fs-2 text-dark text-center'>CARRO VACIO</p>
+        <button onClick={()=>{navegate(`/productos`)}} className='btn btn-success w-25'>Comprar</button>
+        </div>
     }
   return (
     <div>
@@ -56,5 +62,9 @@ const styles = {
         padding: '10px',
         margin: '10px',
         alignItems: 'center',
+    },
+    img :{
+        width: '20%',
+        margin: '10px',
     }
 }

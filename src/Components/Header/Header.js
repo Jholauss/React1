@@ -20,10 +20,10 @@ const Header = () => {
                 <Link to={'/'} className="nav-link text-light">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/Productos'} className="nav-link text-light">Products</Link>
+                <Link to={'/Productos'} className="nav-link text-light">Productos</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/About'} className="nav-link text-light">About us</Link>
+                <Link to={'/About'} className="nav-link text-light">Info</Link>
               </li>
               <div className="contenedor">
                 <Link to={'/Productos'} className="text-light dropdown-toggle text-decoration-none">Categorias</Link>

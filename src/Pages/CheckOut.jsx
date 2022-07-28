@@ -49,9 +49,10 @@ const CheckOut = () => {
   return (
     <div>
         {!ordenId ?<>
-        <h2>Checkout</h2>
-        <div className='col-12 row container-fluid'>
-        <form className='row col-9' onSubmit={finalizarCompra}>
+        <div className='container pt-4'>
+        <h2 className='text-uppercase'>Checkout</h2>
+        <div className='col-12 row container-fluid pt-4 '>
+        <form className='row col-8 bg-dark text-white rounded-start pt-2' onSubmit={finalizarCompra}>
             <div className='col-6'>
                 <label className='form-label'>Nombre</label>
                 <input className='form-control border-danger' required type='text' name='nombre' placeholder='Nombre' onChange={handleChange}/>
@@ -84,17 +85,18 @@ const CheckOut = () => {
             
         </form>
 
-        <div className='row col-3 '>
+        <div className='row col-4 '>
          <img className='w-100 d-flex justify-content-center align-items-center' src={imagenes.gif4} style={{width:"100%"}} alt="gif" />
         </div>
 
         </div>
+        </div>
         </>
-        :<>
+        :<div className='container'>
         <h1>Muchas gracias por tu compra</h1>
         <p>Su orden de compra es : {ordenId}</p>
         <button className='btn btn-success' onClick={()=> navegar('/')}>Volver a home</button>
-        </>}
+        </div>}
     </div>
 
   )
