@@ -13,7 +13,6 @@ En este proyecto se ha desarrollado un eCommerce de zapatillas con capacidad de 
 - Funcion de impresion de comprobante de compra en vista Checkout
 - El proyecto fue desarrollado utilizando ReactRouter para realizar las rutas.
 
-[![4.gif](https://i.postimg.cc/bYBBmPdK/4.gif)](https://postimg.cc/PN1yqBW4)
 ## Para ejecutar servidor de desarrollo de React e iniciar proyecto:
 
 Este proyecto se inició con Create React App.
