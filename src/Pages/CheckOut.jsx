@@ -74,7 +74,7 @@ const CheckOut = () => {
             </div>
             <div>
             <label className='form-label'>Referencia</label>
-            <input className='form-control w-50 border-1 border-danger' required type='text' name='Referencia' placeholder='Referencia' onChange={handleChange}/>
+            <input className='form-control w-50 border-2 border-danger' required type='text' name='Referencia' placeholder='Referencia' onChange={handlrChange}/>
             </div>
             
             <div className='pt-3 pb-3 text-center'>
